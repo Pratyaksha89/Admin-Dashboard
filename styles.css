@@ -1,0 +1,272 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #2d3748, #1a202c); /* Sleek, dark gradient */
+    margin: 0;
+    padding: 0;
+    color: #e2e8f0; /* Soft light color for text */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    color: #63b3ed; /* Elegant Blue */
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(99, 179, 237, 0.8), 0 0 20px rgba(99, 179, 237, 0.5);
+    animation: glowSubtle 4s ease-in-out infinite;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+@keyframes glowSubtle {
+    0%, 100% { text-shadow: 0 0 10px rgba(99, 179, 237, 0.2); }
+    50% { text-shadow: 0 0 20px rgba(99, 179, 237, 0.4); }
+}
+
+/* Section Titles */
+h2 {
+    color: #fbd38d; /* Warm gold */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255, 211, 141, 0.5);
+    animation: subtleSlide 5s ease-in-out infinite alternate;
+    transition: transform 0.6s ease;
+}
+
+h2:hover {
+    transform: translateX(2px); /* Slight shift on hover */
+}
+
+@keyframes subtleSlide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(2px); }
+}
+
+/* Buttons */
+button {
+    padding: 10px 22px;
+    margin: 10px 0;
+    cursor: pointer;
+    background: linear-gradient(145deg, #4c6ef5, #3b82f6); /* Elegant Blue Gradient */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    animation: buttonGlow 4s infinite;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #3b82f6, #4c6ef5); /* Hover color transition */
+    box-shadow: 0 0 15px rgba(99, 179, 237, 0.7);
+    transform: translateY(-4px); /* Hover lift effect */
+}
+
+@keyframes buttonGlow {
+    0%, 100% { box-shadow: 0 0 8px rgba(99, 179, 237, 0.3); }
+    50% { box-shadow: 0 0 16px rgba(99, 179, 237, 0.8); }
+}
+
+button:focus {
+    outline: 2px solid #fbd38d; /* Highlighting focus with a contrasting color */
+    outline-offset: 2px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background: linear-gradient(145deg, #2a2f36, #3d464f); /* Dark gradient with depth */
+    color: #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background: linear-gradient(145deg, #4c6ef5, #3b82f6); /* Elegant blue gradient */
+    color: white;
+    text-shadow: 0 0 3px rgba(99, 179, 237, 0.6);
+}
+
+td {
+    color: #d0d0d0;
+}
+
+th:focus, td:focus {
+    outline: 2px solid #63b3ed;
+    outline-offset: 2px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #2d3748, #1a202c); /* Formal grey gradient */
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.modal-content:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Role and Permission Lists */
+#role-list, #permission-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#role-list li, #permission-list li {
+    background: linear-gradient(145deg, #37474f, #263238); /* Neutral gradient */
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    color: #e2e8f0;
+}
+
+#role-list li:hover, #permission-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 12px rgba(55, 71, 79, 0.6);
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(145deg, #3b82f6, #4c6ef5); /* Smooth Gradient */
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0 20px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #fbd38d; /* Active hover color */
+    transform: translateY(-4px); /* Hover lift effect */
+}
+
+nav a.active {
+    color: #fbd38d; /* Active link color */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    table, button, input {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    table, button, input {
+        font-size: 0.85rem;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Form Inputs and Focus States */
+input, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #4c6ef5; /* Light border to highlight input fields */
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #63b3ed;
+}

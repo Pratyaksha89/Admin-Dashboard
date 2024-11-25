@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBAC Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add FontAwesome CDN link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+        <header>
+            <h1><i class="fas fa-tachometer-alt"></i> ADMIN DASHBOARD</h1>
+        </header>
+
+        <section class="user-management">
+            <h2>User Management</h2>
+            <button id="add-user-btn"><i class="fas fa-user-plus"></i> Add User</button>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User rows will be added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="role-management">
+            <h2>Role Management</h2>
+            <button id="add-role-btn"><i class="fas fa-user-shield"></i> Add Role</button>
+            <ul id="role-list">
+                <!-- Roles will be listed here -->
+            </ul>
+        </section>
+
+        <section class="permissions-management">
+            <h2>Permissions Management</h2>
+            <button id="add-permission-btn"><i class="fas fa-lock"></i> Add Permission</button>
+            <ul id="permission-list">
+                <!-- Permissions will be listed here -->
+            </ul>
+        </section>
+
+        <!-- Modal for adding/editing user -->
+        <div id="user-form" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <h3><i class="fas fa-user"></i> Add/Edit User</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter Name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter Email" required>
+                
+                <label for="role">Role:</label>
+                <select id="role" required>
+                    <option value="">Select Role</option>
+                    <!-- Dynamically load roles here -->
+                </select>
+                
+                <label for="status">Status:</label>
+                <div>
+                    <input type="radio" id="active" name="status" value="Active" checked>
+                    <label for="active">Active</label>
+                    <input type="radio" id="inactive" name="status" value="Inactive">
+                    <label for="inactive">Inactive</label>
+                </div>
+                
+                <button id="save-user-btn"><i class="fas fa-save"></i> Save</button>
+                <button id="close-modal-btn" aria-label="Close"><i class="fas fa-times"></i> Cancel</button>
+            </div>
+        </div>
+
+        <!-- Modal for adding/editing roles -->
+        <div id="role-form" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <h3><i class="fas fa-user-shield"></i> Add/Edit Role</h3>
+                <label for="role-name">Role Name:</label>
+                <input type="text" id="role-name" placeholder="Enter Role Name" required>
+                
+                <label for="permissions">Permissions:</label>
+                <div id="permissions">
+                    <!-- Checkboxes for permissions will be dynamically generated here -->
+                </div>
+                
+                <button id="save-role-btn"><i class="fas fa-save"></i> Save</button>
+                <button id="close-role-modal-btn" aria-label="Close"><i class="fas fa-times"></i> Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
